@@ -10,9 +10,13 @@ public class MaximumCountOfPositiveIntegerAndNegativeInteger {
 
 
                 if (nums[leftPointer] > 0 || nums[rightPointer] < 0){
-                    count = nums.length;
+                    return count = nums.length;
 
-                }else {
+
+                }if (nums[leftPointer] == 0 && nums[rightPointer] ==0){
+                return count = 0;
+                }
+                else {
                      numPosIntegers = findFirstPositiveIndex(nums);
                      numNegIntegers = findFirstNegativeIndex(nums);
                     }
@@ -73,7 +77,9 @@ public class MaximumCountOfPositiveIntegerAndNegativeInteger {
     public static void main(String[] args) {
         int[] nums = {-2, -1, -1, 1, 2, 3};
         int[] nums1 = {-3,-2,-1, 0, 0, 1, 2};
+        int[] nums3 = {5,20,66,1314};
+        int[] nums4 = {0,0};
 
-        System.out.println(maximumCount(nums1));
+        System.out.println(maximumCount(nums4));
     }
 }
