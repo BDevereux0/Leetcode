@@ -1,8 +1,14 @@
+
+
+
 public class ScratchPaper {
 
+    static int test = 5;
+
     public static void main(String[] args) {
-        int x = 6;
-        int result = x << 1;
-        System.out.println(result);
+        test++;
+        System.out.println(test);
+
+
     }
 }
