@@ -3,10 +3,11 @@
 
 public class ScratchPaper {
 
-
+    public static int modulo(int x, int y){
+        return x % y;
+    }
 
     public static void main(String[] args) {
-        System.out.println((2+1)%4);
-
+        System.out.println(modulo(25,6));
     }
 }

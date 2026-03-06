@@ -13,12 +13,13 @@ public class BinarySearch {
             //here i used mid pointer instead of nums[midPointer]
             if (nums[midPointer] == target){
                 result = midPointer;
-                break;
+                return result;
             }else {
-                if (target > midPointer){
-                    leftPointer = midPointer;
+                //here i compared target > midPointer but should have been as it is now.
+                if (target > nums[midPointer]){
+                    leftPointer = midPointer + 1;
                 }else {
-                    rightPointer = midPointer;
+                    rightPointer = midPointer -1;
                 }
             }
         }
@@ -30,7 +31,7 @@ public class BinarySearch {
         int[] arr = {-1,0,3,5,9,12};
 
         System.out.println(search(arr, 9));
-        System.out.println(search(arr, 2));
+       // System.out.println(search(arr, 2));
 
         //On this one, after the first check of mid point, rightPointer is at index 1.
         //then i recalc mid and it goes to 0. so i never have the mid point at 1.
