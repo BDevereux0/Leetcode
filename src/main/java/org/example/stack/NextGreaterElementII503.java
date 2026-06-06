@@ -6,15 +6,22 @@ public class NextGreaterElementII503 {
     public static int[] nextGreaterElements(int[] nums){
         int[] result = new int[nums.length];
         Deque<Integer> stack = new ArrayDeque<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        for (int num : nums){
-            stack.push(num);
+        int pointer = 0;
+
+        for (int i = 0; i < nums.length-1 ; i++) {
+            while (!stack.isEmpty() && stack.peek() < nums[i]) {
+                result[map.get(stack.pop())] = nums[i];
+            }
+            stack.push(nums[i]);
+            //this correlates the values in array with its position
+            map.put(nums[i], i);
+
+            if (i == nums.length-1){
+                i = 0;
+            }
         }
-
-        System.out.println(stack);
-
-
-
 
         return result;
     }
@@ -26,7 +33,7 @@ public class NextGreaterElementII503 {
     public static void main(String[] args) {
         int[] nums = {1,2,1};
         int[] nums1 = {1,2,3,4,3};
-        int[] nums2 = {1,2,3,4,5};
+        int[] nums2 = {8,6,4,9,4};
        // System.out.println(Arrays.toString(nextGreaterElements(nums)));
        // System.out.println(Arrays.toString(nextGreaterElements(nums1)));
         System.out.println(Arrays.toString(nextGreaterElements(nums2)));
