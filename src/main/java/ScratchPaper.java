@@ -8,6 +8,6 @@ public class ScratchPaper {
     }
 
     public static void main(String[] args) {
-        System.out.println(modulo(25,6));
+        System.out.println(modulo(9,5));
     }
 }
