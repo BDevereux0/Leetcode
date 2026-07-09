@@ -21,7 +21,7 @@ public class FloodFill733 {
                 continue;
             }
 
-            if (image[row][col] == originalColor){
+            if (image[row][col] != originalColor){
                 continue;
             }
 
