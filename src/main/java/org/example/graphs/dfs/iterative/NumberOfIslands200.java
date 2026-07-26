@@ -5,6 +5,7 @@ import java.util.Deque;
 
 public class NumberOfIslands200 {
 
+    //this isn't working. i think i need to swap to a nested for loop but lazy
     public static int numIslands(char[][] grid ){
         int islands = 0;
         int[][] foundIslands = new int[grid.length][grid[0].length];
