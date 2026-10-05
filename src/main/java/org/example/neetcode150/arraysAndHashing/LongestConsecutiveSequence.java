@@ -1,45 +1,25 @@
 package org.example.neetcode150.arraysAndHashing;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.PriorityQueue;
+import java.util.*;
+import java.util.stream.Collectors;
 
 //128
 public class LongestConsecutiveSequence {
 
-    //TODO: My priorityQ approach produces n log n, so use something else.
     public int longestConsecutive(int[] nums) {
         int result = 0;
-        int currentValue = 0;
-        int compareValue = 0;
-        PriorityQueue<Integer> q = new PriorityQueue<>();
+        Set<Integer> set = Arrays.stream(nums).boxed().collect(Collectors.toSet());
 
-        for (int n : nums){
-            q.add(n);
-        }
+        for (int sequenceNumber : nums)
 
-        System.out.println(q);
-
-        if (q.peek() != null) {
-             currentValue = q.poll();
-             compareValue = q.peek();
-        }
-
-        for (int i = 0; i < nums.length-1 ; i++) {
-            if (q.peek() == null) {
-                break;
+            if (!set.contains(sequenceNumber -1)){
+                int length = 1;
+                while (set.contains(sequenceNumber +1)){
+                    sequenceNumber = sequenceNumber + 1;
+                    length++;
+                }
+                result = Math.max(result, length);
             }
-
-            if ((compareValue - currentValue) == 1){
-                currentValue = compareValue;
-                result++;
-                compareValue = q.poll();
-            }else {
-                currentValue = q.poll();
-            }
-        }
-
 
         return result;
     }
