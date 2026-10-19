@@ -15,7 +15,6 @@ public class BestTimeToBuyAndSellStock {
                 profit = prices[rightPointer] - prices[leftPointer];
                 result = Math.max(profit, result);
             }
-
             rightPointer++;
         }
 
