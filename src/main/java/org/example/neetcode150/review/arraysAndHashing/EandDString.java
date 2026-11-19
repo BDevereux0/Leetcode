@@ -1,4 +1,4 @@
-package org.example.neetcode150.review.review1;
+package org.example.neetcode150.review.arraysAndHashing;
 
 import java.util.ArrayList;
 import java.util.List;
