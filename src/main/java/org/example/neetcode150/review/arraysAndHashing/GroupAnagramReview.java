@@ -34,12 +34,4 @@ public class GroupAnagramReview {
     }
 }
 
-/*
-A manufacturing company assigns identification codes to products. Each code consists of lowercase English letters.
-Due to differences in how codes are generated, multiple products may receive codes containing the same letters
-in different arrangements. The company wants to organize its inventory by identifying products that belong to
-the same classification. Two product codes belong to the same classification if they contain exactly the same
-letters, with the same number of occurrences of each letter, regardless of their arrangement.
-Write a function that determines how many distinct product classifications exist.
 
- */
